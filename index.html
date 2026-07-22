@@ -308,6 +308,64 @@
       font-weight: 800;
     }
 
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+    .photo-card {
+      height: 210px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    .photo-card img { height: 100%; object-fit: cover; transition: transform .8s ease; }
+    .photo-card:hover img { transform: scale(1.05); }
+    .photo-card .overlay {
+      position: absolute; inset: auto 0 0 0;
+      padding: 0.85rem;
+      color: #fff;
+      background: linear-gradient(180deg, transparent, rgba(10,18,11,0.82));
+      font-weight: 800;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .catalog {
+      padding: 1rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(20,30,20,0.06);
+      box-shadow: var(--shadow);
+    }
+    .catalog .price {
+      display: inline-flex;
+      margin-top: 0.6rem;
+      padding: 0.36rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(47,133,90,0.1);
+      color: #275b3f;
+      font-weight: 900;
+      font-size: 0.82rem;
+    }
+
+    .bilingual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .bilingual .card { min-height: 170px; }
+    .malayalam {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1c3f2b;
+      margin-top: 0.35rem;
+    }
+
     .cta {
       padding: 1.2rem;
       border-radius: 24px;
@@ -345,36 +403,35 @@
     .fact strong { display: block; font-size: 1.45rem; margin-bottom: 0.1rem; }
     .fact span { color: var(--muted); font-size: 0.9rem; }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
-    }
-    .photo-card {
-      height: 210px;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow);
-    }
-    .photo-card img { height: 100%; object-fit: cover; transition: transform .8s ease; }
-    .photo-card:hover img { transform: scale(1.05); }
-    .photo-card .overlay {
-      position: absolute; inset: auto 0 0 0;
-      padding: 0.85rem;
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 30;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      background: #25d366;
       color: #fff;
-      background: linear-gradient(180deg, transparent, rgba(10,18,11,0.82));
-      font-weight: 800;
+      box-shadow: 0 16px 36px rgba(37,211,102,0.28);
+      font-weight: 900;
     }
 
     @media (max-width: 1080px) {
-      .hero, .science, .grid-4, .grid-3, .grid-2, .process, .timeline, .hero-facts, .photo-strip, .photo-grid { grid-template-columns: 1fr; }
+      .hero, .science, .grid-4, .grid-3, .grid-2, .process, .timeline, .hero-facts, .photo-strip, .photo-grid, .catalog-grid, .bilingual { grid-template-columns: 1fr; }
       header { position: static; flex-direction: column; align-items: flex-start; }
       h1 { max-width: none; }
+      .feature-list { grid-template-columns: 1fr; }
+      .lab-grid { grid-template-columns: 1fr; }
+      .whatsapp-fab { right: 12px; bottom: 12px; }
     }
   </style>
 </head>
 <body>
+  <a class="whatsapp-fab" href="https://wa.me/919999999999?text=Hello%20Rozana%20Coconut%20Factory%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noreferrer">WhatsApp enquiry</a>
+
   <div class="wrap" id="top">
     <header>
       <div class="brand">
@@ -387,7 +444,7 @@
       <nav class="nav">
         <a href="#products">Products</a>
         <a href="#science">Science</a>
-        <a href="#process">Process</a>
+        <a href="#factory">Factory</a>
         <a href="#quality">Quality</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
@@ -398,11 +455,12 @@
         <div class="eyebrow">Kerala coconut factory website</div>
         <h1>A premium coconut factory built for Kerala.</h1>
         <p class="lead">
-          This version uses realistic photography, clean editorial layout, and a science-led story — designed to feel like a genuine award-winning factory brand, not an AI mockup.
+          This version uses realistic photography, a clean editorial layout, and a science-led story — designed to feel like a genuine award-winning factory brand, not an AI mockup.
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="#products">Explore products</a>
           <a class="btn secondary" href="#science">See the science</a>
+          <a class="btn secondary" href="#contact">Contact us</a>
         </div>
         <div class="hero-facts">
           <div class="fact"><strong>3200</strong><span>nuts/day target</span></div>
@@ -442,6 +500,20 @@
     </section>
 
     <div class="section-head reveal" style="margin-top:1.3rem;">
+      <div class="section-label">Factory gallery</div>
+      <h2>Real photography, not abstract AI visuals.</h2>
+      <p class="lead">Use images that feel like a real Kerala coconut company: plantation, industrial plant, packaged products, and workers in motion.</p>
+    </div>
+
+    <section id="factory" class="section">
+      <div class="photo-grid">
+        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1716643863806-989dd76ae093?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFudWZhY3R1cmluZyUyMHBsYW50fGVufDB8fDB8fHww" alt="Manufacturing plant" /><div class="overlay">Processing line</div></div>
+        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1755440518852-4181de69f239?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Green coconut trees" /><div class="overlay">Farm source</div></div>
+        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1588413333412-82148535db53?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut products and packaging" /><div class="overlay">Packaged output</div></div>
+      </div>
+    </section>
+
+    <div class="section-head reveal" style="margin-top:1.3rem;">
       <div class="section-label">Products</div>
       <h2>From one coconut, many premium products.</h2>
       <p class="lead">The strongest Kerala factory story is not one product. It is a full value chain with food, beverage, and byproduct revenue.</p>
@@ -453,21 +525,25 @@
           <div class="photo"><img src="https://images.unsplash.com/photo-1560769680-ba2f3767c785?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29jb251dCUyMG9pbHxlbnwwfHwwfHx8MA%3D%3D" alt="Coconut oil bottle" /></div>
           <h3>Virgin coconut oil</h3>
           <p>Premium, shelf-stable, export-ready, and the strongest margin engine in the portfolio.</p>
+          <span class="price">Indicative: ₹550–₹700/L</span>
         </div>
         <div class="card tile reveal">
           <div class="photo"><img src="https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut water drink" /></div>
           <h3>Tender coconut water</h3>
           <p>Natural hydration with electrolytes — modern, healthy, and easy to brand.</p>
+          <span class="price">Indicative: ₹30–₹60/pack</span>
         </div>
         <div class="card tile reveal">
           <div class="photo"><img src="https://images.unsplash.com/photo-1676364000557-1ffbbcb4c8a6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29jb251dCUyMHdhdGVyfGVufDB8fDB8fHww" alt="Coconut pieces and product flat lay" /></div>
           <h3>Coconut milk / paste</h3>
           <p>Strong Kerala culinary fit for curries, ready mixes, and horeca supply.</p>
+          <span class="price">Indicative: ₹120–₹250/kg</span>
         </div>
         <div class="card tile reveal">
           <div class="photo"><img src="https://images.unsplash.com/photo-1588413336302-40123f9ef556?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvY29udXR8ZW58MHx8MHx8fDA%3D" alt="Coconuts and tropical product scene" /></div>
           <h3>Chips / sweets / snacks</h3>
           <p>Retail and gifting formats that help the brand become visible on shelves.</p>
+          <span class="price">Indicative: ₹80–₹180/pack</span>
         </div>
       </div>
     </section>
@@ -567,7 +643,24 @@
         <div class="photo-grid reveal">
           <div class="photo-card"><img src="https://images.unsplash.com/photo-1539434252743-6555ffc91d9d?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kerala coconut plantation" /><div class="overlay">Kerala plantation</div></div>
           <div class="photo-card"><img src="https://images.unsplash.com/photo-1755440518852-4181de69f239?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Tropical coconut landscape" /><div class="overlay">Farm sourcing</div></div>
-          <div class="photo-card"><img src="https://images.unsplash.com/photo-1588413333412-82148535db53?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8" alt="Coconut product and packaging" /><div class="overlay">Premium packaging</div></div>
+          <div class="photo-card"><img src="https://images.unsplash.com/photo-1588413333412-82148535db53?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut product and packaging" /><div class="overlay">Premium packaging</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bilingual" class="section">
+      <div class="section-head reveal">
+        <div class="section-label">Bilingual</div>
+        <h2>English + മലയാളം presence for Kerala.</h2>
+      </div>
+      <div class="bilingual">
+        <div class="card reveal">
+          <h3>English</h3>
+          <p class="lead" style="margin-bottom:0;">A premium Kerala coconut factory built on science, quality, and a modern brand story.</p>
+        </div>
+        <div class="card reveal">
+          <h3>മലയാളം</h3>
+          <div class="malayalam">കേരളത്തിലെ തേങ്ങാ മൂല്യശൃംഖല — ഗുണമേന്മയും ശാസ്ത്രീയമായ പ്രോസസ്സിംഗും ഉള്ള ബ്രാൻഡ്.</div>
         </div>
       </div>
     </section>
@@ -596,15 +689,25 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="contact" class="section">
       <div class="grid-2">
         <div class="card cta reveal">
           <h3>Brand direction</h3>
           <p style="margin-top:0.4rem;">Luxury + science + Kerala identity. That is the combination that can win attention, trust, and awards.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://wa.me/919999999999?text=Hello%20Rozana%20Coconut%20Factory%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noreferrer">WhatsApp enquiry</a>
+            <a class="btn secondary" href="#top">Back to top</a>
+          </div>
         </div>
         <div class="card reveal">
-          <h3>Photography style</h3>
-          <p>Real coconut plantation, real product shots, real packaging, and clean editorial layouts — no abstract AI look.</p>
+          <h3>Contact details</h3>
+          <p style="margin-top:0.35rem;">Replace the placeholder WhatsApp number with your real business number when ready.</p>
+          <ul style="margin-left:1.1rem; display:grid; gap:0.55rem; color:var(--muted); margin-top:0.8rem;">
+            <li><strong>WhatsApp:</strong> +91 99999 99999</li>
+            <li><strong>Email:</strong> hello@rozana.com</li>
+            <li><strong>Location:</strong> Kerala, India</li>
+            <li><strong>Focus:</strong> coconut oil, drinks, snacks, byproducts</li>
+          </ul>
         </div>
       </div>
     </section>
