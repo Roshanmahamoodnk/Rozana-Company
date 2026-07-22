@@ -3,218 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free OCR Website</title>
-  <meta name="description" content="A free GitHub Pages OCR website that extracts text from images and PDFs in the browser." />
+  <title>Rozana Coconut Project</title>
+  <meta name="description" content="Rozana Coconut Project — a Kerala coconut value-chain website covering products, process, sustainability, and growth roadmap." />
   <style>
     :root {
-      --bg: #07110f;
-      --bg2: #0d1f1a;
-      --panel: rgba(255,255,255,0.07);
-      --panel-strong: rgba(255,255,255,0.12);
-      --border: rgba(255,255,255,0.14);
-      --text: #f4fbf8;
-      --muted: rgba(244,251,248,0.72);
-      --accent: #7fe0a6;
-      --accent2: #89c8ff;
-      --accent3: #ffd57d;
-      --danger: #ff9f9f;
-      --shadow: 0 20px 70px rgba(0,0,0,0.35);
+      --bg: #06140d;
+      --bg2: #0a2417;
+      --card: rgba(255,255,255,0.06);
+      --card2: rgba(255,255,255,0.09);
+      --line: rgba(255,255,255,0.12);
+      --text: #f4fbf6;
+      --muted: rgba(244,251,246,0.72);
+      --accent: #79df9d;
+      --accent2: #8fd0ff;
+      --accent3: #ffd47a;
+      --shadow: 0 18px 60px rgba(0,0,0,0.34);
     }
 
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; background: linear-gradient(135deg, var(--bg), var(--bg2)); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; background: linear-gradient(135deg, var(--bg), var(--bg2)); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
     body { line-height: 1.45; }
 
-    .wrap {
-      width: min(1180px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 2rem 0 4rem;
+    .wrap { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 1.2rem 0 4rem; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 0 1.2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 30%, #bdf5cc, #79df9d 35%, #26704b 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+    }
+    .nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .nav a { color: inherit; text-decoration: none; }
+    .nav a:hover { color: #fff; }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 1.2rem;
       align-items: stretch;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      border: 1px solid rgba(127,224,166,0.2);
-      background: rgba(127,224,166,0.1);
-      color: #dffbea;
       padding: 0.55rem 0.9rem;
       border-radius: 999px;
+      border: 1px solid rgba(121,223,157,0.22);
+      background: rgba(121,223,157,0.10);
+      color: #dffbe8;
       font-weight: 700;
-      letter-spacing: 0.02em;
       font-size: 0.92rem;
     }
 
     h1 {
-      font-size: clamp(2.4rem, 5vw, 4.8rem);
-      line-height: 0.98;
-      margin: 1rem 0 1rem;
+      font-size: clamp(2.8rem, 6vw, 5.4rem);
+      line-height: 0.96;
       max-width: 11ch;
+      margin: 1rem 0 1rem;
     }
 
-    p.lead {
-      color: var(--muted);
-      font-size: 1.12rem;
-      max-width: 58rem;
-      margin: 0 0 1.25rem;
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.02;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-card, .panel, .result-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
+    h3 { font-size: 1.15rem; margin-bottom: 0.45rem; }
+    p { color: var(--muted); }
+    .lead { font-size: 1.12rem; max-width: 56rem; margin-bottom: 1.2rem; }
+
+    .panel, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
-      border-radius: 24px;
+    }
+
+    .panel { padding: 1.3rem; }
+    .hero-copy { padding: 1.2rem 0 1rem; }
+
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.05rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      font-weight: 700;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #4ecb82);
+      color: #062013;
+      border: none;
     }
 
     .hero-card {
-      padding: 1.3rem;
       display: grid;
       gap: 0.9rem;
+      padding: 1.2rem;
     }
-
-    .hero-stat {
-      padding: 1rem 1rem 0.9rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-    .hero-stat strong { display: block; font-size: 1.7rem; color: white; margin-bottom: 0.15rem; }
-    .hero-stat span { color: var(--muted); font-size: 0.95rem; }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 1.25rem 0;
-    }
-
-    .mini {
+    .stat {
       padding: 1rem;
       border-radius: 18px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
     }
-    .mini h3 { margin: 0 0 0.45rem; font-size: 1rem; }
-    .mini p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .stat strong { display: block; font-size: 1.6rem; color: #fff; margin-bottom: 0.2rem; }
+    .stat span { color: var(--muted); }
 
-    .panel {
-      padding: 1.25rem;
-      margin-top: 1.25rem;
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+    .section { margin-top: 1.2rem; }
+    .section-head { margin: 0.6rem 0 1rem; }
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 0.7rem;
     }
 
-    .dropzone {
-      border: 1.5px dashed rgba(127,224,166,0.45);
-      border-radius: 20px;
-      background: rgba(127,224,166,0.07);
-      padding: 1.4rem;
-      min-height: 170px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s ease;
+    .mini { padding: 1rem; }
+    .mini p { font-size: 0.95rem; }
+    .icon {
+      width: 42px; height: 42px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(121,223,157,0.2), rgba(143,208,255,0.18));
+      display: grid; place-items: center;
+      margin-bottom: 0.8rem; font-size: 1.15rem;
     }
-    .dropzone.dragover { transform: scale(1.01); background: rgba(127,224,166,0.12); border-color: rgba(127,224,166,0.8); }
-    .dropzone .title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.45rem; }
-    .dropzone .sub { color: var(--muted); max-width: 42rem; }
 
-    .controls {
+    ul { margin-left: 1.2rem; display: grid; gap: 0.55rem; color: var(--muted); }
+    li strong { color: var(--text); }
+
+    .process {
       display: grid;
-      grid-template-columns: 1fr auto auto auto;
-      gap: 0.8rem;
-      margin-top: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+    }
+    .step {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-height: 145px;
+    }
+    .step .num {
+      display: inline-flex;
       align-items: center;
-    }
-
-    input[type="file"], select, button, textarea {
-      font: inherit;
-    }
-
-    .btn, .filebtn, select {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 0.8rem 1rem;
-      cursor: pointer;
-    }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), #54c784); color: #062013; font-weight: 800; border-color: transparent; }
-    .btn.secondary { background: rgba(255,255,255,0.08); }
-    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-    select { min-width: 160px; }
-    input[type="file"] { display: none; }
-
-    .status {
-      margin-top: 0.9rem;
-      color: var(--muted);
-      font-size: 0.96rem;
-      min-height: 1.4em;
-    }
-
-    .progress-wrap {
-      display: grid;
-      gap: 0.5rem;
-      margin-top: 0.9rem;
-    }
-
-    .progress {
-      height: 12px;
-      background: rgba(255,255,255,0.08);
+      justify-content: center;
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .progress > div {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: inherit;
-      transition: width 0.18s ease;
-    }
-
-    .results {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .result-card { padding: 1rem; }
-    .result-head { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.75rem; }
-    .result-head h3 { margin: 0; font-size: 1.05rem; }
-    .result-meta { color: var(--muted); font-size: 0.9rem; }
-    .result-actions { display: flex; gap: 0.55rem; flex-wrap: wrap; }
-
-    textarea {
-      width: 100%;
-      min-height: 250px;
-      resize: vertical;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(3,10,8,0.5);
-      color: var(--text);
-      padding: 1rem;
-      outline: none;
-      white-space: pre-wrap;
-    }
-
-    .footer {
-      margin-top: 1.4rem;
-      color: rgba(244,251,248,0.58);
+      margin-bottom: 0.7rem;
+      background: rgba(121,223,157,0.16);
+      color: #dffbe8;
+      font-weight: 800;
       font-size: 0.92rem;
     }
 
-    .tagrow { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.8rem; }
+    .tagrow { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.9rem; }
     .tag {
-      padding: 0.45rem 0.75rem;
+      padding: 0.42rem 0.74rem;
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
@@ -222,324 +207,235 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 960px) {
-      .hero, .grid-3, .controls { grid-template-columns: 1fr; }
-      .wrap { width: min(1180px, calc(100% - 1rem)); }
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .timeline .card { padding: 1rem; }
+    .phase {
+      display: inline-flex;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,212,122,0.14);
+      color: #ffe8b2;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.7rem;
+      font-weight: 800;
+    }
+
+    .footer {
+      margin-top: 1.3rem;
+      padding-top: 1rem;
+      color: rgba(244,251,246,0.58);
+      font-size: 0.92rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box {
+      padding: 1.25rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(121,223,157,0.12), rgba(143,208,255,0.10));
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    @media (max-width: 950px) {
+      .hero, .grid-4, .grid-3, .grid-2, .process, .timeline { grid-template-columns: 1fr; }
+      header { position: static; flex-direction: column; align-items: flex-start; }
       h1 { max-width: none; }
-      select { width: 100%; }
+      .nav { gap: 0.75rem 1rem; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="hero">
-      <div>
-        <div class="badge">Free GitHub Pages OCR website</div>
-        <h1>Read text from images and PDFs in the browser</h1>
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div>Rozana Company</div>
+          <div style="color:var(--muted); font-size:0.9rem;">Kerala Coconut Project</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#process">Process</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="badge">From coconut to value-added products</div>
+        <h1>Building a Kerala coconut business</h1>
         <p class="lead">
-          This is a fully static OCR web app you can host on GitHub Pages for free. Upload an image or PDF, run OCR client-side, and copy or download the extracted text.
+          Rozana Company is a coconut value-chain website focused on premium food products, byproducts, and sustainable processing.
+          The goal is to buy coconuts locally, process them efficiently, and sell higher-value coconut products for Kerala, India, and export markets.
         </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#products">Explore products</a>
+          <a class="btn" href="#process">See process flow</a>
+        </div>
         <div class="tagrow">
-          <span class="tag">Client-side OCR</span>
-          <span class="tag">Image support</span>
-          <span class="tag">PDF support</span>
-          <span class="tag">No backend</span>
-          <span class="tag">Free hosting</span>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-stat">
-          <strong>100% static</strong>
-          <span>Works on GitHub Pages without a server.</span>
-        </div>
-        <div class="hero-stat">
-          <strong>Browser OCR</strong>
-          <span>Uses Tesseract.js and pdf.js directly in the browser.</span>
-        </div>
-        <div class="hero-stat">
-          <strong>Easy share link</strong>
-          <span>Once Pages is enabled, anyone can access your site URL.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid-3">
-      <div class="mini">
-        <h3>1. Upload</h3>
-        <p>Drop an image or PDF, or click to choose files.</p>
-      </div>
-      <div class="mini">
-        <h3>2. Extract</h3>
-        <p>Text is read directly in the browser, page by page.</p>
-      </div>
-      <div class="mini">
-        <h3>3. Export</h3>
-        <p>Copy the output or download it as a text file.</p>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div id="dropzone" class="dropzone">
-        <div>
-          <div class="title">Drag & drop files here</div>
-          <div class="sub">Supported: JPG, PNG, WEBP, TIFF, and PDF. For PDFs, each page is rendered and OCR’d in the browser.</div>
+          <span class="tag">Virgin coconut oil</span>
+          <span class="tag">Tender coconut water</span>
+          <span class="tag">Coconut milk</span>
+          <span class="tag">Desiccated coconut</span>
+          <span class="tag">Coir & shell byproducts</span>
         </div>
       </div>
 
-      <div class="controls">
-        <label class="filebtn" for="fileInput">Choose files</label>
-        <input id="fileInput" type="file" accept="image/*,application/pdf" multiple />
-        <select id="langSelect">
-          <option value="eng">English</option>
-        </select>
-        <button id="startBtn" class="btn primary">Run OCR</button>
-        <button id="clearBtn" class="btn secondary">Clear</button>
-      </div>
-
-      <div class="status" id="status">Ready.</div>
-      <div class="progress-wrap">
-        <div class="progress"><div id="progressBar"></div></div>
-        <div class="status" id="progressText"></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="result-head" style="margin-bottom:1rem;">
-        <div>
-          <h3>Extracted text</h3>
-          <div class="result-meta" id="summaryMeta">No files processed yet.</div>
+      <div class="panel hero-card">
+        <div class="stat">
+          <strong>Kerala fit</strong>
+          <span>Strong cultural acceptance, local supply, and familiar coconut usage patterns.</span>
         </div>
-        <div class="result-actions">
-          <button id="copyBtn" class="btn secondary" disabled>Copy text</button>
-          <button id="downloadBtn" class="btn secondary" disabled>Download .txt</button>
+        <div class="stat">
+          <strong>Multi-product</strong>
+          <span>Food, beverage, and byproduct lines can share the same raw coconut base.</span>
+        </div>
+        <div class="stat">
+          <strong>Zero-waste story</strong>
+          <span>Kernel, shell, husk, and water can all be monetized with the right process design.</span>
         </div>
       </div>
-      <textarea id="output" placeholder="OCR output will appear here..." spellcheck="false"></textarea>
-      <div class="results" id="fileResults"></div>
-      <div class="footer">
-        Tip: For best OCR results, use clear images, good lighting, and cropped pages. You can add more languages later by extending the language selector.
+    </section>
+
+    <section id="products" class="section">
+      <div class="section-head">
+        <div class="section-label">Products</div>
+        <h2>What the website can sell</h2>
+        <p class="lead">Start with a focused set of products that match Kerala demand, shelf life, and margin logic.</p>
       </div>
+      <div class="grid-4">
+        <div class="card mini">
+          <div class="icon">🥥</div>
+          <h3>Virgin coconut oil</h3>
+          <p>Premium, stable, export-friendly, and one of the best margin products in the coconut category.</p>
+        </div>
+        <div class="card mini">
+          <div class="icon">💧</div>
+          <h3>Tender coconut water</h3>
+          <p>Natural hydration beverage with electrolyte appeal for daily wellness and recovery.</p>
+        </div>
+        <div class="card mini">
+          <div class="icon">🥛</div>
+          <h3>Coconut milk / paste</h3>
+          <p>Strong fit for Kerala kitchens, restaurants, ready-to-cook products, and curry bases.</p>
+        </div>
+        <div class="card mini">
+          <div class="icon">🍪</div>
+          <h3>Coconut chips / sweets</h3>
+          <p>Retail-friendly snacks and gifting products with strong pairing potential.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-3">
+        <div class="card mini">
+          <h3>Byproducts</h3>
+          <p>Charcoal, briquettes, coir mats, brushes, baskets, and shell products improve economics and reduce waste.</p>
+        </div>
+        <div class="card mini">
+          <h3>Functional products</h3>
+          <p>Coconut coffee, coconut drinks, electrolyte beverages, and flavored hydration products can build a modern brand.</p>
+        </div>
+        <div class="card mini">
+          <h3>Traditional products</h3>
+          <p>Items like chutney base, kadala curry coconut, neera, and local sweets support cultural fit and repeat demand.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="section-head">
+        <div class="section-label">Process</div>
+        <h2>How the business works</h2>
+      </div>
+      <div class="process">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Buy and grade</h3>
+          <p>Source mature and tender coconuts from farmers, traders, and local aggregation points.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Process</h3>
+          <p>Clean, split, extract, grate, press, dry, or filter based on the product line.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Pack</h3>
+          <p>Use bottles, pouches, cartons, chilled packs, or industrial packs depending on shelf life.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Sell</h3>
+          <p>Target retail, horeca, export, quick commerce, and byproduct buyers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <div class="card mini">
+          <h3>Why Kerala works</h3>
+          <ul>
+            <li><strong>Cultural trust:</strong> coconut is already part of everyday food and tradition.</li>
+            <li><strong>Supply base:</strong> local coconuts are widely available in Kerala and nearby regions.</li>
+            <li><strong>Market need:</strong> ready-to-use coconut products save time for households and hotels.</li>
+          </ul>
+        </div>
+        <div class="card mini">
+          <h3>Competitive angle</h3>
+          <ul>
+            <li><strong>Premium brand:</strong> move from raw coconut to packaged coconut products.</li>
+            <li><strong>Multiple revenue streams:</strong> food, beverage, and byproducts together.</li>
+            <li><strong>Cleaner margins:</strong> better value per coconut by using the whole fruit.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-head">
+        <div class="section-label">Roadmap</div>
+        <h2>Suggested launch plan</h2>
+      </div>
+      <div class="timeline">
+        <div class="card">
+          <div class="phase">Phase 1</div>
+          <h3>Launch the core products</h3>
+          <p>Start with VCO, coconut milk/paste, and one snack SKU to validate demand and quality systems.</p>
+        </div>
+        <div class="card">
+          <div class="phase">Phase 2</div>
+          <h3>Add hydration products</h3>
+          <p>Introduce tender coconut water and electrolyte-style drinks for wider market reach.</p>
+        </div>
+        <div class="card">
+          <div class="phase">Phase 3</div>
+          <h3>Scale the full coconut platform</h3>
+          <p>Expand into coir, charcoal, baskets, and export-ready value-added coconut products.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="contact-box">
+        <div class="section-label">Contact</div>
+        <h2>Ready for a public website</h2>
+        <p class="lead">This site is ready to be hosted on GitHub Pages as a free public URL. You can later add your logo, products, contact details, and enquiry form.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://github.com/Roshanmahamoodnk/Rozana-Company" target="_blank" rel="noreferrer">Open GitHub repo</a>
+          <a class="btn" href="#top">Back to top</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Built as a simple static website for GitHub Pages. Replace this text with your company address, phone, email, and product enquiry details when you’re ready.
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script>
-    const fileInput = document.getElementById('fileInput');
-    const dropzone = document.getElementById('dropzone');
-    const startBtn = document.getElementById('startBtn');
-    const clearBtn = document.getElementById('clearBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const output = document.getElementById('output');
-    const fileResults = document.getElementById('fileResults');
-    const statusEl = document.getElementById('status');
-    const progressBar = document.getElementById('progressBar');
-    const progressText = document.getElementById('progressText');
-    const summaryMeta = document.getElementById('summaryMeta');
-    const langSelect = document.getElementById('langSelect');
-
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-    let selectedFiles = [];
-    let lastText = '';
-
-    function setStatus(text) { statusEl.textContent = text; }
-    function setProgress(value, text = '') {
-      progressBar.style.width = `${Math.max(0, Math.min(100, value))}%`;
-      progressText.textContent = text;
-    }
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function normalizeFiles(files) {
-      return Array.from(files || []).filter(Boolean);
-    }
-
-    function addFiles(files) {
-      const incoming = normalizeFiles(files);
-      selectedFiles = [...selectedFiles, ...incoming];
-      updateSummary();
-      setStatus(`${selectedFiles.length} file(s) ready.`);
-    }
-
-    function updateSummary() {
-      if (!selectedFiles.length) {
-        summaryMeta.textContent = 'No files processed yet.';
-        return;
-      }
-      summaryMeta.textContent = `${selectedFiles.length} file(s) selected: ${selectedFiles.map(f => f.name).join(', ')}`;
-    }
-
-    function clearAll() {
-      selectedFiles = [];
-      output.value = '';
-      fileResults.innerHTML = '';
-      lastText = '';
-      fileInput.value = '';
-      setStatus('Ready.');
-      setProgress(0, '');
-      summaryMeta.textContent = 'No files processed yet.';
-      copyBtn.disabled = true;
-      downloadBtn.disabled = true;
-    }
-
-    async function recognizeImage(file, lang) {
-      const objectUrl = URL.createObjectURL(file);
-      try {
-        const result = await Tesseract.recognize(objectUrl, lang, {
-          logger: info => {
-            if (info.status === 'recognizing text' && typeof info.progress === 'number') {
-              setProgress(Math.round(info.progress * 100), `OCR progress: ${Math.round(info.progress * 100)}%`);
-            } else if (info.status) {
-              setProgress(Math.min(95, Math.round((info.progress || 0) * 100)), info.status);
-            }
-          }
-        });
-        return result.data.text || '';
-      } finally {
-        URL.revokeObjectURL(objectUrl);
-      }
-    }
-
-    async function recognizePdf(file, lang) {
-      const buffer = await file.arrayBuffer();
-      const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
-      let text = '';
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        setStatus(`Rendering PDF page ${pageNum}/${pdf.numPages}...`);
-        const page = await pdf.getPage(pageNum);
-        const viewport = page.getViewport({ scale: 1.75 });
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d', { willReadFrequently: true });
-        canvas.width = Math.ceil(viewport.width);
-        canvas.height = Math.ceil(viewport.height);
-        await page.render({ canvasContext: context, viewport }).promise;
-
-        setStatus(`Running OCR on PDF page ${pageNum}/${pdf.numPages}...`);
-        const result = await Tesseract.recognize(canvas, lang, {
-          logger: info => {
-            if (info.status === 'recognizing text' && typeof info.progress === 'number') {
-              const base = (pageNum - 1) / pdf.numPages;
-              const total = base + (info.progress / pdf.numPages);
-              setProgress(Math.round(total * 100), `Page ${pageNum}/${pdf.numPages}: ${Math.round(info.progress * 100)}%`);
-            }
-          }
-        });
-        text += `\n\n--- Page ${pageNum} ---\n\n${result.data.text || ''}`;
-      }
-      return text.trim();
-    }
-
-    function appendResultCard(fileName, text, mime) {
-      const preview = text.trim().slice(0, 350) || '(No text detected)';
-      const card = document.createElement('div');
-      card.className = 'result-card';
-      card.innerHTML = `
-        <div class="result-head">
-          <div>
-            <h3>${escapeHtml(fileName)}</h3>
-            <div class="result-meta">${escapeHtml(mime)} • ${text.trim().length} characters extracted</div>
-          </div>
-          <div class="result-actions">
-            <button class="btn secondary small-copy">Copy snippet</button>
-          </div>
-        </div>
-        <textarea readonly spellcheck="false">${escapeHtml(text)}</textarea>
-        <div class="note" style="margin-top:0.75rem; color: var(--muted);">Preview: ${escapeHtml(preview)}</div>
-      `;
-      card.querySelector('.small-copy').addEventListener('click', async () => {
-        await navigator.clipboard.writeText(text);
-        setStatus(`Copied text from ${fileName}.`);
-      });
-      fileResults.appendChild(card);
-    }
-
-    async function runOcr() {
-      if (!selectedFiles.length) {
-        setStatus('Choose one or more image or PDF files first.');
-        return;
-      }
-
-      const lang = langSelect.value || 'eng';
-      startBtn.disabled = true;
-      clearBtn.disabled = true;
-      copyBtn.disabled = true;
-      downloadBtn.disabled = true;
-      fileResults.innerHTML = '';
-      output.value = '';
-      lastText = '';
-      setProgress(0, 'Starting OCR...');
-
-      const chunks = [];
-      for (let i = 0; i < selectedFiles.length; i++) {
-        const file = selectedFiles[i];
-        const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
-        try {
-          setStatus(`Processing ${file.name}...`);
-          let extracted = '';
-          if (isPdf) {
-            extracted = await recognizePdf(file, lang);
-          } else {
-            extracted = await recognizeImage(file, lang);
-          }
-          chunks.push(`===== ${file.name} =====\n${extracted.trim()}\n`);
-          appendResultCard(file.name, extracted, isPdf ? 'PDF' : file.type || 'image');
-        } catch (err) {
-          const message = `ERROR processing ${file.name}: ${err && err.message ? err.message : err}`;
-          chunks.push(`===== ${file.name} =====\n${message}\n`);
-          appendResultCard(file.name, message, isPdf ? 'PDF' : file.type || 'image');
-        }
-        setProgress(Math.round(((i + 1) / selectedFiles.length) * 100), `Completed ${i + 1} of ${selectedFiles.length}`);
-      }
-
-      lastText = chunks.join('\n').trim();
-      output.value = lastText;
-      copyBtn.disabled = !lastText;
-      downloadBtn.disabled = !lastText;
-      setStatus('OCR complete.');
-      startBtn.disabled = false;
-      clearBtn.disabled = false;
-    }
-
-    fileInput.addEventListener('change', e => addFiles(e.target.files));
-    startBtn.addEventListener('click', runOcr);
-    clearBtn.addEventListener('click', clearAll);
-    copyBtn.addEventListener('click', async () => {
-      await navigator.clipboard.writeText(output.value || '');
-      setStatus('Full OCR text copied to clipboard.');
-    });
-    downloadBtn.addEventListener('click', () => {
-      const blob = new Blob([output.value || ''], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'ocr-output.txt';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    });
-
-    dropzone.addEventListener('click', () => fileInput.click());
-    dropzone.addEventListener('dragover', e => {
-      e.preventDefault();
-      dropzone.classList.add('dragover');
-    });
-    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
-    dropzone.addEventListener('drop', e => {
-      e.preventDefault();
-      dropzone.classList.remove('dragover');
-      addFiles(e.dataTransfer.files);
-    });
-
-    clearAll();
-  </script>
 </body>
 </html>
