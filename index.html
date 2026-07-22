@@ -3,728 +3,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rozana Coconut Factory | Kerala</title>
-  <meta name="description" content="Rozana Coconut Factory — a realistic, science-led Kerala coconut business website with premium products, factory process, quality lab, and sustainability story." />
+  <title>Justcocon | Rozalab R&D Consultancy</title>
+  <meta name="description" content="Justcocon client project site by Rozalab — a reader-friendly R&D consultancy page for Dr Mahaboob's vision, with research updates, project notes, and coconut product direction." />
   <style>
     :root {
-      --bg: #f4efe6;
-      --bg2: #efe7d6;
-      --card: rgba(255,255,255,0.82);
-      --line: rgba(20,30,20,0.08);
-      --text: #122017;
-      --muted: rgba(18,32,23,0.72);
-      --accent: #2f855a;
-      --accent2: #1d6fb5;
-      --accent3: #b88b22;
-      --shadow: 0 18px 50px rgba(20, 28, 18, 0.10);
+      --bg: #f6f4ee;
+      --card: rgba(255,255,255,0.86);
+      --line: rgba(18,32,23,0.08);
+      --text: #142119;
+      --muted: rgba(20,33,25,0.72);
+      --green: #2f855a;
+      --blue: #1d6fb5;
+      --gold: #b88b22;
+      --shadow: 0 18px 46px rgba(18, 24, 18, 0.10);
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
+      margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(47,133,90,0.08), transparent 28%),
-        radial-gradient(circle at top right, rgba(29,111,181,0.08), transparent 24%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      line-height: 1.5;
-      overflow-x: hidden;
+        radial-gradient(circle at top right, rgba(29,111,181,0.07), transparent 26%),
+        linear-gradient(180deg, #f7f3ea, #efe8dc);
+      line-height: 1.55;
     }
-
     a { color: inherit; text-decoration: none; }
-    img { width: 100%; display: block; }
-
-    .wrap {
-      width: min(1240px, calc(100% - 2rem));
-      margin: 0 auto;
-      padding: 1rem 0 3.5rem;
-    }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 1rem 0 3rem; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(244,239,230,0.92), rgba(244,239,230,0.7));
-      border-bottom: 1px solid rgba(20,30,20,0.06);
+      position: sticky; top: 0; z-index: 5;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 0.9rem 0;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(246,244,238,0.95), rgba(246,244,238,0.72));
+      border-bottom: 1px solid rgba(18,32,23,0.06);
     }
-
-    .brand { display: flex; gap: 0.8rem; align-items: center; }
-    .logo {
+    .brand { display: flex; align-items: center; gap: 0.85rem; }
+    .mark {
       width: 46px; height: 46px; border-radius: 16px;
-      background:
-        radial-gradient(circle at 35% 35%, #fff 0 13%, transparent 14%),
-        radial-gradient(circle at 55% 55%, #fff 0 16%, transparent 17%),
-        linear-gradient(135deg, #66b983, #2f855a 60%, #1b563a);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 8px 20px rgba(47,133,90,0.22);
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #68b987, #2f855a 60%, #1f5f41);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 10px 24px rgba(47,133,90,0.20);
+      overflow: hidden;
     }
-    .brand strong { display: block; font-size: 1.04rem; }
-    .brand span { display: block; color: var(--muted); font-size: 0.9rem; }
-    .nav { display: flex; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: 0.94rem; }
-    .nav a:hover { color: var(--text); }
+    .mark svg { width: 34px; height: 34px; }
+    .brand strong { display: block; font-size: 1rem; }
+    .brand span { display: block; font-size: 0.9rem; color: var(--muted); }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; color: var(--muted); font-size: 0.94rem; }
+    nav a:hover { color: var(--text); }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
-      gap: 1.2rem;
-      align-items: stretch;
-      margin-top: 1rem;
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem;
+      align-items: center; margin-top: 1.2rem;
     }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
+    .pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 0.85rem; border-radius: 999px;
       background: rgba(47,133,90,0.10);
       border: 1px solid rgba(47,133,90,0.16);
-      color: #23533a;
-      font-weight: 800;
-      font-size: 0.9rem;
+      color: #245439; font-size: 0.9rem; font-weight: 800;
     }
-
     h1 {
-      font-size: clamp(3rem, 6vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      margin: 1rem 0 0.9rem;
-      max-width: 11ch;
+      font-size: clamp(2.8rem, 5.8vw, 5rem);
+      line-height: 0.96; letter-spacing: -0.05em;
+      margin: 1rem 0 0.85rem; max-width: 10ch;
     }
     h2 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.8rem;
+      font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+      line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 0.75rem;
     }
-    h3 { font-size: 1.1rem; margin-bottom: 0.45rem; }
-    p { color: var(--muted); }
-    .lead { font-size: 1.14rem; max-width: 54rem; margin-bottom: 1.2rem; }
-
-    .panel, .card, .timeline-card, .stat {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-copy { padding: 0.8rem 0; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+    h3 { margin: 0 0 0.45rem; font-size: 1.08rem; }
+    p { margin: 0; color: var(--muted); }
+    .lead { font-size: 1.08rem; max-width: 60ch; }
+    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.1rem; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 0.88rem 1.08rem; border-radius: 14px;
-      border: 1px solid rgba(20,30,20,0.08);
-      background: rgba(255,255,255,0.78);
+      padding: 0.88rem 1.05rem; border-radius: 14px;
+      border: 1px solid rgba(18,32,23,0.08); background: rgba(255,255,255,0.75);
       font-weight: 800;
     }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), #5fb67f); color: #fff; border: none; }
-    .btn.secondary { background: rgba(255,255,255,0.65); }
+    .btn.primary { background: linear-gradient(135deg, var(--green), #61b67f); color: #fff; border: none; }
 
-    .hero-panel { display: grid; gap: 0.9rem; padding: 1.1rem; }
-    .hero-photo {
-      position: relative;
-      min-height: 460px;
-      border-radius: 26px;
-      overflow: hidden;
-      background: #ddd;
-      isolation: isolate;
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 24px; box-shadow: var(--shadow); overflow: hidden;
     }
-    .hero-photo img {
-      width: 100%; height: 100%; object-fit: cover;
-      transform: scale(1.03);
-      transition: transform 10s ease;
-    }
-    .hero-photo:hover img { transform: scale(1.08); }
-    .hero-overlay {
+    .hero-card { padding: 1rem; }
+    .hero-photo { border-radius: 22px; overflow: hidden; min-height: 410px; position: relative; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .overlay {
       position: absolute; inset: auto 0 0 0;
-      padding: 1.1rem;
-      background: linear-gradient(180deg, transparent, rgba(10,18,11,0.88));
-      color: #fff;
+      padding: 1rem; background: linear-gradient(180deg, transparent, rgba(8,15,10,0.86)); color: #fff;
     }
-    .hero-overlay .label { display: inline-flex; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.5rem; opacity: 0.88; }
-    .hero-overlay h3 { font-size: 1.45rem; margin-bottom: 0.3rem; }
-    .hero-overlay p { color: rgba(255,255,255,0.82); font-size: 0.94rem; }
+    .overlay strong { display: block; font-size: 1.25rem; margin-bottom: 0.25rem; }
+    .overlay span { color: rgba(255,255,255,0.84); font-size: 0.92rem; }
 
-    .hero-statgrid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
-    .stat { padding: 0.95rem; }
-    .stat strong { display: block; font-size: 1.55rem; margin-bottom: 0.12rem; }
-    .stat span { color: var(--muted); font-size: 0.9rem; }
-
-    .section { margin-top: 1.3rem; }
-    .section-head { margin: 0.9rem 0 1rem; }
-    .section-label {
-      display: inline-flex;
-      padding: 0.42rem 0.74rem;
-      border-radius: 999px;
-      background: rgba(29,111,181,0.10);
-      border: 1px solid rgba(29,111,181,0.12);
-      color: #155086;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      font-size: 0.8rem;
-      font-weight: 900;
-      margin-bottom: 0.75rem;
-    }
-
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .section { margin-top: 1.35rem; }
+    .section-head { margin: 0.9rem 0 1rem; }
+    .label {
+      display: inline-flex; margin-bottom: 0.7rem;
+      padding: 0.38rem 0.72rem; border-radius: 999px;
+      background: rgba(29,111,181,0.10); border: 1px solid rgba(29,111,181,0.12);
+      color: #18538b; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase;
+    }
+    .box { padding: 1rem; }
 
-    .card { padding: 1rem; }
-    .tile { min-height: 220px; display: grid; gap: 0.75rem; }
-    .tile .photo {
-      height: 150px;
-      border-radius: 18px;
-      overflow: hidden;
-      background: #eae4d6;
-    }
-    .tile .photo img { height: 100%; object-fit: cover; transition: transform .8s ease; }
-    .tile:hover .photo img { transform: scale(1.05); }
-    .tile p { font-size: 0.94rem; }
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-top: 1rem; }
+    .stat { padding: 0.95rem; }
+    .stat strong { display: block; font-size: 1.45rem; margin-bottom: 0.15rem; }
+    .stat span { font-size: 0.9rem; color: var(--muted); }
 
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
+    .note-list {
+      display: grid; gap: 0.7rem; margin-top: 0.75rem;
+      padding-left: 1.05rem;
     }
-    .feature {
-      padding: 1rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(20,30,20,0.06);
-    }
-    .feature .num { font-size: 1.5rem; font-weight: 900; color: var(--accent); margin-bottom: 0.2rem; }
-    .feature p { font-size: 0.93rem; }
+    .note-list li { color: var(--muted); }
 
-    .science {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 1rem;
-      align-items: stretch;
+    .research { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .research-card {
+      padding: 1rem; min-height: 170px;
+      background: rgba(255,255,255,0.85); border: 1px solid rgba(18,32,23,0.06);
+      border-radius: 20px; box-shadow: var(--shadow);
     }
-    .specs { display: grid; gap: 0.8rem; }
-    .spec {
-      padding: 0.95rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(20,30,20,0.06);
+    .research-card .tag {
+      display: inline-flex; margin-bottom: 0.6rem;
+      padding: 0.35rem 0.68rem; border-radius: 999px;
+      background: rgba(184,139,34,0.12); color: #8d6812;
+      font-size: 0.76rem; letter-spacing: 0.12em; font-weight: 900; text-transform: uppercase;
     }
-    .spec .top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; margin-bottom: 0.45rem; }
-    .spec .top strong { font-size: 0.98rem; }
-    .spec .top span { color: var(--muted); font-size: 0.85rem; }
-    .bar { height: 10px; border-radius: 999px; overflow: hidden; background: rgba(20,30,20,0.08); }
-    .fill { height: 100%; width: var(--w, 50%); border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
-    .fill.alt { background: linear-gradient(90deg, var(--accent3), #d7a53a); }
-    .fill.red { background: linear-gradient(90deg, #e9a79a, #cf684f); }
 
-    .lab-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
-    }
-    .lab {
-      padding: 0.95rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(20,30,20,0.06);
-      min-height: 132px;
-    }
-    .lab .num { font-size: 1.5rem; font-weight: 900; color: var(--accent); margin-bottom: 0.25rem; }
-    .lab span { color: var(--muted); font-size: 0.9rem; }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0.8rem;
-    }
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     .step {
-      padding: 1rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(20,30,20,0.06);
-      min-height: 170px;
-      display: grid;
-      gap: 0.5rem;
+      padding: 1rem; min-height: 150px;
+      background: rgba(255,255,255,0.86); border: 1px solid rgba(18,32,23,0.06);
+      border-radius: 20px; box-shadow: var(--shadow);
     }
     .step .num {
       width: 30px; height: 30px; border-radius: 999px;
-      display: inline-grid; place-items: center;
-      background: rgba(47,133,90,0.12);
-      color: #245a3e; font-weight: 900; font-size: 0.9rem;
-    }
-    .step p { font-size: 0.92rem; }
-
-    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .timeline-card {
-      padding: 1rem;
-      min-height: 180px;
-      display: grid;
-      gap: 0.45rem;
-    }
-    .timeline-card .tag {
-      display: inline-flex;
-      padding: 0.36rem 0.72rem;
-      border-radius: 999px;
-      background: rgba(184,139,34,0.12);
-      border: 1px solid rgba(184,139,34,0.14);
-      color: #8a6915;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 900;
-      width: fit-content;
+      display: grid; place-items: center; margin-bottom: 0.55rem;
+      background: rgba(47,133,90,0.12); color: #245439; font-weight: 900;
     }
 
-    .photo-strip {
-      display: grid;
-      grid-template-columns: 1.3fr 0.9fr 0.8fr;
-      gap: 0.9rem;
-    }
-    .strip-photo {
-      height: 320px;
-      border-radius: 24px;
-      overflow: hidden;
-      position: relative;
-      background: #e7e0cf;
-      box-shadow: var(--shadow);
-    }
-    .strip-photo img { height: 100%; object-fit: cover; }
-    .strip-photo .caption {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 1rem;
-      background: linear-gradient(180deg, transparent, rgba(10,18,11,0.88));
-      color: #fff;
-      font-weight: 800;
+    .image-strip { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1rem; }
+    .img-card { min-height: 280px; border-radius: 22px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+    .img-card img { width: 100%; height: 100%; object-fit: cover; }
+    .img-card .cap {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 0.9rem 1rem;
+      color: #fff; background: linear-gradient(180deg, transparent, rgba(8,15,10,0.84)); font-weight: 800;
     }
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
-    }
-    .photo-card {
-      height: 210px;
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow);
-    }
-    .photo-card img { height: 100%; object-fit: cover; transition: transform .8s ease; }
-    .photo-card:hover img { transform: scale(1.05); }
-    .photo-card .overlay {
-      position: absolute; inset: auto 0 0 0;
-      padding: 0.85rem;
-      color: #fff;
-      background: linear-gradient(180deg, transparent, rgba(10,18,11,0.82));
-      font-weight: 800;
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-    .catalog {
-      padding: 1rem;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(20,30,20,0.06);
-      box-shadow: var(--shadow);
-    }
-    .catalog .price {
-      display: inline-flex;
-      margin-top: 0.6rem;
-      padding: 0.36rem 0.72rem;
-      border-radius: 999px;
-      background: rgba(47,133,90,0.1);
-      color: #275b3f;
-      font-weight: 900;
-      font-size: 0.82rem;
-    }
-
-    .bilingual {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    .bilingual .card { min-height: 170px; }
     .malayalam {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #1c3f2b;
-      margin-top: 0.35rem;
+      font-size: 1.08rem; font-weight: 700; color: #1a3c2a;
     }
-
-    .cta {
-      padding: 1.2rem;
-      border-radius: 24px;
-      background: linear-gradient(135deg, rgba(47,133,90,0.12), rgba(29,111,181,0.10));
-      border: 1px solid rgba(20,30,20,0.06);
-    }
-
     .footer {
-      margin-top: 1.2rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(20,30,20,0.08);
-      color: rgba(18,32,23,0.55);
-      font-size: 0.92rem;
+      margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(18,32,23,0.08);
+      color: rgba(20,33,25,0.56); font-size: 0.92rem;
+    }
+    .fade { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+
+    .whatsapp {
+      position: fixed; right: 18px; bottom: 18px; z-index: 20;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.9rem 1rem; border-radius: 999px;
+      background: #25d366; color: #fff; font-weight: 900;
+      box-shadow: 0 16px 34px rgba(37,211,102,0.28);
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    .hero-facts {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .fact {
-      padding: 0.9rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(20,30,20,0.06);
-    }
-    .fact strong { display: block; font-size: 1.45rem; margin-bottom: 0.1rem; }
-    .fact span { color: var(--muted); font-size: 0.9rem; }
-
-    .whatsapp-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 30;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.9rem 1rem;
-      border-radius: 999px;
-      background: #25d366;
-      color: #fff;
-      box-shadow: 0 16px 36px rgba(37,211,102,0.28);
-      font-weight: 900;
-    }
-
-    @media (max-width: 1080px) {
-      .hero, .science, .grid-4, .grid-3, .grid-2, .process, .timeline, .hero-facts, .photo-strip, .photo-grid, .catalog-grid, .bilingual { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .hero, .grid-2, .grid-3, .grid-4, .stat-row, .research, .flow, .image-strip { grid-template-columns: 1fr; }
       header { position: static; flex-direction: column; align-items: flex-start; }
       h1 { max-width: none; }
-      .feature-list { grid-template-columns: 1fr; }
-      .lab-grid { grid-template-columns: 1fr; }
-      .whatsapp-fab { right: 12px; bottom: 12px; }
+      .whatsapp { right: 12px; bottom: 12px; }
     }
   </style>
 </head>
 <body>
-  <a class="whatsapp-fab" href="https://wa.me/919999999999?text=Hello%20Rozana%20Coconut%20Factory%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noreferrer">WhatsApp enquiry</a>
+  <a class="whatsapp" href="https://wa.me/919999999999?text=Hello%20Rozalab%2C%20I%20want%20to%20enquire%20about%20the%20Justcocon%20project" target="_blank" rel="noreferrer">WhatsApp enquiry</a>
 
-  <div class="wrap" id="top">
+  <div class="wrap">
     <header>
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="28" cy="30" r="13" fill="#f3e0b7"/>
+            <path d="M25 16c2 5 3 10 3 20" stroke="#7b5719" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+            <path d="M26 20c-5-2-9-2-14 1 5 1 9 3 13 6" stroke="#f7f3ea" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M30 20c5-3 10-3 15 0-5 1-9 3-13 6" stroke="#f7f3ea" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
         <div>
-          <strong>Rozana Coconut Factory</strong>
-          <span>Kerala • realistic • science-led</span>
+          <strong>Justcocon</strong>
+          <span>Client project hosted by Rozalab</span>
         </div>
       </div>
-      <nav class="nav">
-        <a href="#products">Products</a>
-        <a href="#science">Science</a>
-        <a href="#factory">Factory</a>
-        <a href="#quality">Quality</a>
-        <a href="#roadmap">Roadmap</a>
+      <nav>
+        <a href="#project">Project</a>
+        <a href="#research">Research</a>
+        <a href="#updates">Roza Choice</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <section class="hero">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">Kerala coconut factory website</div>
-        <h1>A premium coconut factory built for Kerala.</h1>
+      <div class="fade">
+        <div class="pill">R&amp;D consultancy • Dr Mahaboob vision</div>
+        <h1>Justcocon, presented clearly for the client.</h1>
         <p class="lead">
-          This version uses realistic photography, a clean editorial layout, and a science-led story — designed to feel like a genuine award-winning factory brand, not an AI mockup.
+          This website is framed as a client project uploaded by Rozalab — a reader-friendly R&amp;D consultancy page for coconut product direction, research notes, and progress updates.
         </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#products">Explore products</a>
-          <a class="btn secondary" href="#science">See the science</a>
-          <a class="btn secondary" href="#contact">Contact us</a>
+        <div class="actions">
+          <a class="btn primary" href="#project">View project summary</a>
+          <a class="btn" href="#research">Read research notes</a>
         </div>
-        <div class="hero-facts">
-          <div class="fact"><strong>3200</strong><span>nuts/day target</span></div>
-          <div class="fact"><strong>7</strong><span>product families</span></div>
-          <div class="fact"><strong>95%</strong><span>utilization goal</span></div>
-          <div class="fact"><strong>Kerala</strong><span>brand identity</span></div>
+        <div class="stat-row">
+          <div class="card stat"><strong>Client</strong><span>Justcocon</span></div>
+          <div class="card stat"><strong>Agency</strong><span>Rozalab</span></div>
+          <div class="card stat"><strong>Focus</strong><span>Coconut R&amp;D</span></div>
+          <div class="card stat"><strong>Style</strong><span>Reader-friendly</span></div>
         </div>
       </div>
 
-      <div class="panel hero-panel reveal">
+      <div class="card hero-card fade">
         <div class="hero-photo">
-          <img src="https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Real coconut drink in a natural tropical setting" />
-          <div class="hero-overlay">
-            <div class="label">Hero product</div>
-            <h3>Fresh hydration, premium packaging, Kerala roots.</h3>
-            <p>Natural electrolyte story with a real photographic look and a clean luxury feel.</p>
+          <img src="https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?q=80&w=2448&auto=format&fit=crop" alt="Coconut drink on a tropical background" />
+          <div class="overlay">
+            <strong>Justcocon project view</strong>
+            <span>Clear, calm, and easy to read for clients and stakeholders.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="photo-strip">
-        <div class="strip-photo">
-          <img src="https://images.unsplash.com/photo-1539434252743-6555ffc91d9d?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut palms in a tropical plantation" />
-          <div class="caption">Kerala sourcing landscape</div>
-        </div>
-        <div class="strip-photo">
-          <img src="https://images.unsplash.com/photo-1676364000557-1ffbbcb4c8a6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29jb251dCUyMHdhdGVyfGVufDB8fDB8fHww" alt="Coconut product close-up" />
-          <div class="caption">Product detail</div>
-        </div>
-        <div class="strip-photo">
-          <img src="https://images.unsplash.com/photo-1560769680-ba2f3767c785?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29jb251dCUyMG9pbHxlbnwwfHwwfHx8MA%3D%3D" alt="Bottled coconut oil product" />
-          <div class="caption">Shelf-stable premium line</div>
-        </div>
+    <section id="project" class="section">
+      <div class="section-head fade">
+        <div class="label">Project overview</div>
+        <h2>How the site should be understood.</h2>
       </div>
-    </section>
-
-    <div class="section-head reveal" style="margin-top:1.3rem;">
-      <div class="section-label">Factory gallery</div>
-      <h2>Real photography, not abstract AI visuals.</h2>
-      <p class="lead">Use images that feel like a real Kerala coconut company: plantation, industrial plant, packaged products, and workers in motion.</p>
-    </div>
-
-    <section id="factory" class="section">
-      <div class="photo-grid">
-        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1716643863806-989dd76ae093?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFudWZhY3R1cmluZyUyMHBsYW50fGVufDB8fDB8fHww" alt="Manufacturing plant" /><div class="overlay">Processing line</div></div>
-        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1755440518852-4181de69f239?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Green coconut trees" /><div class="overlay">Farm source</div></div>
-        <div class="photo-card reveal"><img src="https://images.unsplash.com/photo-1588413333412-82148535db53?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut products and packaging" /><div class="overlay">Packaged output</div></div>
-      </div>
-    </section>
-
-    <div class="section-head reveal" style="margin-top:1.3rem;">
-      <div class="section-label">Products</div>
-      <h2>From one coconut, many premium products.</h2>
-      <p class="lead">The strongest Kerala factory story is not one product. It is a full value chain with food, beverage, and byproduct revenue.</p>
-    </div>
-
-    <section id="products" class="section">
-      <div class="grid-4">
-        <div class="card tile reveal">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1560769680-ba2f3767c785?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29jb251dCUyMG9pbHxlbnwwfHwwfHx8MA%3D%3D" alt="Coconut oil bottle" /></div>
-          <h3>Virgin coconut oil</h3>
-          <p>Premium, shelf-stable, export-ready, and the strongest margin engine in the portfolio.</p>
-          <span class="price">Indicative: ₹550–₹700/L</span>
+      <div class="grid-2">
+        <div class="card box fade">
+          <h3>What Justcocon is</h3>
+          <p>
+            Justcocon is the client project name shown on this site. The page presents the project in a simple, readable way so visitors quickly understand what is being built and why.
+          </p>
+          <ul class="note-list">
+            <li>Project name: Justcocon</li>
+            <li>Presented by: Rozalab</li>
+            <li>Role: R&amp;D consultancy and direction</li>
+            <li>Vision line: Dr Mahaboob vision</li>
+          </ul>
         </div>
-        <div class="card tile reveal">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1535922964111-cf1f1e862dcc?q=80&w=2448&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut water drink" /></div>
-          <h3>Tender coconut water</h3>
-          <p>Natural hydration with electrolytes — modern, healthy, and easy to brand.</p>
-          <span class="price">Indicative: ₹30–₹60/pack</span>
-        </div>
-        <div class="card tile reveal">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1676364000557-1ffbbcb4c8a6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29jb251dCUyMHdhdGVyfGVufDB8fDB8fHww" alt="Coconut pieces and product flat lay" /></div>
-          <h3>Coconut milk / paste</h3>
-          <p>Strong Kerala culinary fit for curries, ready mixes, and horeca supply.</p>
-          <span class="price">Indicative: ₹120–₹250/kg</span>
-        </div>
-        <div class="card tile reveal">
-          <div class="photo"><img src="https://images.unsplash.com/photo-1588413336302-40123f9ef556?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvY29udXR8ZW58MHx8MHx8fDA%3D" alt="Coconuts and tropical product scene" /></div>
-          <h3>Chips / sweets / snacks</h3>
-          <p>Retail and gifting formats that help the brand become visible on shelves.</p>
-          <span class="price">Indicative: ₹80–₹180/pack</span>
+        <div class="card box fade">
+          <h3>What the visitor should feel</h3>
+          <p>
+            The page should feel calm, informative, and client-ready — not crowded, not flashy, and not difficult to scan.
+          </p>
+          <ul class="note-list">
+            <li>Simple section titles</li>
+            <li>Short paragraphs</li>
+            <li>Clear labels and update blocks</li>
+            <li>Easy navigation on phone and desktop</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="grid-4">
-        <div class="card feature reveal"><div class="num">01</div><h3>Charcoal</h3><p>Shell waste becomes grill charcoal or briquettes with strong industrial demand.</p></div>
-        <div class="card feature reveal"><div class="num">02</div><h3>Coir</h3><p>Husk becomes coir mats, fiber, baskets, and grow media for agricultural use.</p></div>
-        <div class="card feature reveal"><div class="num">03</div><h3>Functional drinks</h3><p>Coconut coffee, solkadhi, and flavored drinks create a modern premium line.</p></div>
-        <div class="card feature reveal"><div class="num">04</div><h3>Zero waste</h3><p>The business makes money from the shell, husk, kernel, and water instead of discarding them.</p></div>
+      <div class="image-strip fade">
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1716643863806-989dd76ae093?fm=jpg&q=60&w=3000&auto=format&fit=crop" alt="Industrial processing line" />
+          <div class="cap">Production and process direction</div>
+        </div>
+        <div class="img-card">
+          <img src="https://images.unsplash.com/photo-1755440518852-4181de69f239?w=2000&auto=format&fit=crop&q=60" alt="Coconut plantation" />
+          <div class="cap">Source and farm story</div>
+        </div>
       </div>
     </section>
 
-    <section id="science" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Science</div>
-        <h2>Science that buyers can understand immediately.</h2>
-        <p class="lead">The website should read like a real factory: composition, electrolyte logic, QC, shelf life, and product specification — not generic marketing jargon.</p>
+    <section id="research" class="section">
+      <div class="section-head fade">
+        <div class="label">Research notes</div>
+        <h2>Rozalab research should be easy to read.</h2>
       </div>
-      <div class="science">
-        <div class="card reveal">
-          <div class="specs">
-            <div class="spec"><div class="top"><strong>Tender coconut water</strong><span>natural electrolytes</span></div><div class="bar"><div class="fill" style="--w:86%"></div></div></div>
-            <div class="spec"><div class="top"><strong>Kernel / copra</strong><span>oil, milk, paste</span></div><div class="bar"><div class="fill alt" style="--w:91%"></div></div></div>
-            <div class="spec"><div class="top"><strong>Shell</strong><span>charcoal, carbon</span></div><div class="bar"><div class="fill red" style="--w:74%"></div></div></div>
-            <div class="spec"><div class="top"><strong>Husk</strong><span>coir, fiber, media</span></div><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
-          </div>
+      <div class="research">
+        <div class="research-card fade">
+          <div class="tag">1. Market</div>
+          <h3>Why the project matters</h3>
+          <p>Use coconut value-chain ideas that can be explained in one glance: drink, oil, snack, byproduct, and sustainability.</p>
         </div>
-        <div class="card reveal">
-          <div class="lab-grid">
-            <div class="lab"><div class="num">K+</div><span>Potassium supports hydration positioning for coconut water.</span></div>
-            <div class="lab"><div class="num">FAT</div><span>Kernel-derived oil gives premium mouthfeel and culinary value.</span></div>
-            <div class="lab"><div class="num">FIBER</div><span>Husk converts into coir and sustainable materials.</span></div>
-            <div class="lab"><div class="num">CLEAN</div><span>QC, hygiene, and shelf-life control make the brand credible.</span></div>
-          </div>
+        <div class="research-card fade">
+          <div class="tag">2. Product</div>
+          <h3>What should be shown</h3>
+          <p>Show only the strongest product lines first, then add supporting details such as uses, buyers, and simple positioning.</p>
+        </div>
+        <div class="research-card fade">
+          <div class="tag">3. Readability</div>
+          <h3>How the page should read</h3>
+          <p>Keep sentences short, sections clear, and labels consistent so the client can review the page without effort.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <div class="section-head fade">
+        <div class="label">Roza Choice</div>
+        <h2>Research updates will be posted here.</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card box fade">
+          <h3>Update format</h3>
+          <p>Every update can include what changed, why it changed, and what the next step should be.</p>
+        </div>
+        <div class="card box fade">
+          <h3>Update focus</h3>
+          <p>Brand direction, product direction, site readability, and client review notes can live in one place.</p>
+        </div>
+        <div class="card box fade">
+          <h3>Owner</h3>
+          <p>Prepared under Rozalab guidance, aligned with Dr Mahaboob vision for the client project.</p>
         </div>
       </div>
     </section>
 
     <section id="process" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Process</div>
-        <h2>Factory flow designed for real production.</h2>
+      <div class="section-head fade">
+        <div class="label">Working flow</div>
+        <h2>Simple project flow for the client.</h2>
       </div>
-      <div class="process">
-        <div class="step reveal"><div class="num">1</div><h3>Source</h3><p>Aggregate coconuts from Kerala farms and local traders with traceability.</p></div>
-        <div class="step reveal"><div class="num">2</div><h3>Grade</h3><p>Sort by freshness, maturity, kernel quality, and target SKU.</p></div>
-        <div class="step reveal"><div class="num">3</div><h3>Extract</h3><p>Open, clean, grate, press, filter, and process by product line.</p></div>
-        <div class="step reveal"><div class="num">4</div><h3>Control</h3><p>Monitor moisture, hygiene, seal integrity, and lab release.</p></div>
-        <div class="step reveal"><div class="num">5</div><h3>Pack</h3><p>Use bottles, pouches, aseptic cartons, and industrial packs.</p></div>
-        <div class="step reveal"><div class="num">6</div><h3>Sell</h3><p>Supply Kerala, metro India, horeca, and export channels.</p></div>
-      </div>
-    </section>
-
-    <section id="quality" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Quality Lab</div>
-        <h2>Winning factory brands feel trustworthy.</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card reveal">
-          <h3>Critical control points</h3>
-          <ul style="margin-left:1.1rem; display:grid; gap:0.55rem; color:var(--muted);">
-            <li><strong>Raw material:</strong> incoming freshness gate</li>
-            <li><strong>Sanitation:</strong> cleaning-in-place and hygienic handling</li>
-            <li><strong>Moisture:</strong> desiccated coconut and oil line control</li>
-            <li><strong>Packaging:</strong> seal, oxygen barrier, shelf-life integrity</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3>Lab dashboard</h3>
-          <div class="feature-list">
-            <div class="feature"><div class="num">QC</div><p>Batch release before dispatch.</p></div>
-            <div class="feature"><div class="num">SOP</div><p>Documented process for every SKU.</p></div>
-            <div class="feature"><div class="num">CIP</div><p>Clean-in-place for beverage lines.</p></div>
-            <div class="feature"><div class="num">HACCP</div><p>Food safety built into design.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sustainability" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Sustainability</div>
-        <h2>The most powerful story is zero waste.</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card reveal">
-          <h3>One coconut, many outputs</h3>
-          <ul style="margin-left:1.1rem; display:grid; gap:0.55rem; color:var(--muted);">
-            <li><strong>Water:</strong> hydration beverages</li>
-            <li><strong>Kernel:</strong> oil, milk, paste, snacks</li>
-            <li><strong>Shell:</strong> charcoal, briquettes, carbon</li>
-            <li><strong>Husk:</strong> coir, fiber, grow media</li>
-          </ul>
-        </div>
-        <div class="photo-grid reveal">
-          <div class="photo-card"><img src="https://images.unsplash.com/photo-1539434252743-6555ffc91d9d?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kerala coconut plantation" /><div class="overlay">Kerala plantation</div></div>
-          <div class="photo-card"><img src="https://images.unsplash.com/photo-1755440518852-4181de69f239?w=2000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Tropical coconut landscape" /><div class="overlay">Farm sourcing</div></div>
-          <div class="photo-card"><img src="https://images.unsplash.com/photo-1588413333412-82148535db53?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coconut product and packaging" /><div class="overlay">Premium packaging</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="bilingual" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Bilingual</div>
-        <h2>English + മലയാളം presence for Kerala.</h2>
-      </div>
-      <div class="bilingual">
-        <div class="card reveal">
-          <h3>English</h3>
-          <p class="lead" style="margin-bottom:0;">A premium Kerala coconut factory built on science, quality, and a modern brand story.</p>
-        </div>
-        <div class="card reveal">
-          <h3>മലയാളം</h3>
-          <div class="malayalam">കേരളത്തിലെ തേങ്ങാ മൂല്യശൃംഖല — ഗുണമേന്മയും ശാസ്ത്രീയമായ പ്രോസസ്സിംഗും ഉള്ള ബ്രാൻഡ്.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap" class="section">
-      <div class="section-head reveal">
-        <div class="section-label">Roadmap</div>
-        <h2>Launch in phases, then scale the ecosystem.</h2>
-      </div>
-      <div class="timeline">
-        <div class="timeline-card reveal">
-          <div class="tag">Phase 1</div>
-          <h3>Core products</h3>
-          <p>Launch VCO, coconut milk/paste, and one snack SKU. Build the first version of trust and shelf presence.</p>
-        </div>
-        <div class="timeline-card reveal">
-          <div class="tag">Phase 2</div>
-          <h3>Science drinks</h3>
-          <p>Add tender coconut water, electrolyte drinks, and premium variants for modern retail and horeca.</p>
-        </div>
-        <div class="timeline-card reveal">
-          <div class="tag">Phase 3</div>
-          <h3>Full platform</h3>
-          <p>Expand into coir, charcoal, baskets, export packaging, and a high-visibility Kerala brand story.</p>
-        </div>
+      <div class="flow">
+        <div class="step fade"><div class="num">1</div><h3>Capture request</h3><p>Collect the client request and keep the project title clearly visible.</p></div>
+        <div class="step fade"><div class="num">2</div><h3>Review research</h3><p>Summarize the key product, brand, and market points in plain language.</p></div>
+        <div class="step fade"><div class="num">3</div><h3>Update page</h3><p>Refresh the site so the latest research and direction can be seen quickly.</p></div>
+        <div class="step fade"><div class="num">4</div><h3>Share with client</h3><p>Present the page as a working client project, ready for feedback.</p></div>
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="grid-2">
-        <div class="card cta reveal">
-          <h3>Brand direction</h3>
-          <p style="margin-top:0.4rem;">Luxury + science + Kerala identity. That is the combination that can win attention, trust, and awards.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="https://wa.me/919999999999?text=Hello%20Rozana%20Coconut%20Factory%2C%20I%20want%20to%20enquire%20about%20your%20products" target="_blank" rel="noreferrer">WhatsApp enquiry</a>
-            <a class="btn secondary" href="#top">Back to top</a>
-          </div>
+        <div class="card box fade">
+          <h3>Current framing</h3>
+          <p>
+            This is now positioned as the <strong>Justcocon</strong> client project under <strong>Rozalab</strong>, with a research-first style and a clearer, more reader-friendly presentation.
+          </p>
         </div>
-        <div class="card reveal">
-          <h3>Contact details</h3>
-          <p style="margin-top:0.35rem;">Replace the placeholder WhatsApp number with your real business number when ready.</p>
-          <ul style="margin-left:1.1rem; display:grid; gap:0.55rem; color:var(--muted); margin-top:0.8rem;">
-            <li><strong>WhatsApp:</strong> +91 99999 99999</li>
-            <li><strong>Email:</strong> hello@rozana.com</li>
-            <li><strong>Location:</strong> Kerala, India</li>
-            <li><strong>Focus:</strong> coconut oil, drinks, snacks, byproducts</li>
-          </ul>
+        <div class="card box fade">
+          <h3>Next research update</h3>
+          <p>
+            Add the next Roza Choice note here whenever the research changes. Keep it short, specific, and easy for the client to scan.
+          </p>
         </div>
+      </div>
+      <div class="card box fade" style="margin-top:1rem;">
+        <h3>Malayalam note</h3>
+        <p class="malayalam">ഇത് Justcocon client project ആണെന്ന് വ്യക്തമായി കാണിക്കണം; Rozalab ആണ് R&amp;D consultancy, Dr Mahaboob vision അനുസരിച്ചാണ് research updates മുന്നോട്ട് പോകുന്നത്.</p>
       </div>
     </section>
 
-    <div class="footer reveal">
-      Photography note: this version uses public-stock photographic assets to create a more realistic, human-made brand feel. You can later replace them with your own factory and farm images.
+    <div class="footer fade">
+      Note: this page is intentionally simple and reader-friendly so the client can understand the project, the consultancy role, and the research update flow at a glance.
     </div>
   </div>
 
   <script>
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+    const items = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
       });
     }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
+    items.forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
